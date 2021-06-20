@@ -9,8 +9,9 @@ This program is intended to use on WSL or Linux.
 ## How to use
 
 1. Clone this repository.
-2. Open the Terminal.
-3. Run `./comp-prog`.
+2. Modify `settings/template.cpp` as you like.
+3. Open the Terminal.
+4. Run `./comp-prog`.
 
 ## License
 
