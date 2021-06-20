@@ -1,4 +1,5 @@
 #define _GLIBCXX_DEBUG
+#include "functions/command.h"
 #include "functions/message.h"
 #include "functions/question.h"
 
@@ -22,6 +23,9 @@ int main() {
     if (command == "exit") {
       message("Exiting...");
       break;
+    }
+    else if (command == "reset") {
+      run("Reset", "cat ./settings/template.cpp > a.cpp");
     }
     else {
       message("No Command Found. Try Again.");
