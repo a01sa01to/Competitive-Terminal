@@ -1,9 +1,9 @@
 #define _GLIBCXX_DEBUG
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 using namespace std;
 
-int main(){
+int main() {
   cout << fixed << setprecision(15);
   cout << endl;
   cout << "┌──────────────────────────────────────┐" << endl;
