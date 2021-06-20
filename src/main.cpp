@@ -3,9 +3,11 @@
 #include "functions/message.h"
 #include "functions/question.h"
 
+#include <chrono>
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <thread>
 using namespace std;
 
 int main() {
@@ -31,5 +33,6 @@ int main() {
       message("No Command Found. Try Again.");
     }
   }
+  this_thread::sleep_for(chrono::seconds(1));
   return 0;
 }
