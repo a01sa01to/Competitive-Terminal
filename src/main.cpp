@@ -37,6 +37,8 @@ int main() {
   cout << "│                          Made by Asa │" << endl;
   cout << "└──────────────────────────────────────┘" << endl;
   cout << endl;
+  cout << "Type 'help' or 'h' to show help." << endl;
+  cout << endl;
   while (true) {
     string command = question("Command");
     if (command == "compile" || command == "c") {
