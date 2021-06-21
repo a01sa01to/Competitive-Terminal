@@ -1,5 +1,6 @@
 #define _GLIBCXX_DEBUG
 #include "functions/command.cpp"
+#include "functions/help.cpp"
 #include "functions/message.cpp"
 #include "functions/question.cpp"
 
@@ -25,6 +26,9 @@ int main() {
     if (command == "exit") {
       message("Exiting...");
       break;
+    }
+    else if (command == "help") {
+      help();
     }
     else if (command == "reset") {
       run("Reset", "cat ./settings/template.cpp > a.cpp");
