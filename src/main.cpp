@@ -13,10 +13,10 @@ using namespace std;
 
 void test() {
   cout << "! Test Selected." << endl;
-  cout << "? Type Sample Input:" << endl;
-  cout << "-----------------" << endl;
+  cout << "? Type Sample Input" << endl;
+  cout << "─────────────────────" << endl;
   int ret = system("./a.out");
-  cout << "-----------------" << endl;
+  cout << "─────────────────────" << endl;
   cout << endl;
   if (WIFEXITED(ret)) {
     cout << "! Test completed with status " << WEXITSTATUS(ret) << endl;
