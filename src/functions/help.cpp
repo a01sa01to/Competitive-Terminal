@@ -23,6 +23,9 @@ void help() {
   cout << "─ reset" << endl;
   cout << "  Reset a.cpp according to settings/template.cpp" << endl;
   cout << "  Same as 'cat ./settings/template.cpp > a.cpp'" << endl;
+  cout << "─ test" << endl;
+  cout << "  Run a.out; you can test sample inputs" << endl;
+  cout << "  Same as './a.out'" << endl;
 
   cout << endl;
 }

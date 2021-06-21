@@ -11,6 +11,22 @@
 #include <thread>
 using namespace std;
 
+void test() {
+  cout << "! Test Selected." << endl;
+  cout << "? Type Sample Input:" << endl;
+  cout << "-----------------" << endl;
+  int ret = system("./a.out");
+  cout << "-----------------" << endl;
+  cout << endl;
+  if (WIFEXITED(ret)) {
+    cout << "! Test completed with status " << WEXITSTATUS(ret) << endl;
+  }
+  else {
+    cout << "! Test failed with status -1" << endl;
+  }
+  cout << endl;
+}
+
 int main() {
   cout << fixed << setprecision(15);
   cout << endl;
@@ -35,6 +51,9 @@ int main() {
     }
     else if (command == "reset") {
       run("Reset", (char*) "cat ./settings/template.cpp > a.cpp");
+    }
+    else if (command == "test") {
+      test();
     }
     else {
       message("No Command Found. Try Again.");
