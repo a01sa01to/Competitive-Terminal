@@ -23,7 +23,10 @@ int main() {
   cout << endl;
   while (true) {
     string command = question("Command");
-    if (command == "exit") {
+    if (command == "compile") {
+      run("Compile", (char*) "g++ a.cpp -o a.out");
+    }
+    else if (command == "exit") {
       message("Exiting...");
       break;
     }
@@ -31,7 +34,7 @@ int main() {
       help();
     }
     else if (command == "reset") {
-      run("Reset", "cat ./settings/template.cpp > a.cpp");
+      run("Reset", (char*) "cat ./settings/template.cpp > a.cpp");
     }
     else {
       message("No Command Found. Try Again.");
