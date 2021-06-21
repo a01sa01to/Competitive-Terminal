@@ -61,6 +61,9 @@ int main() {
     else if (command == "test-in" || command == "ti") {
       run("Test (Input from stdin.txt)", (char*) "cat ./stdin.txt | ./a.out");
     }
+    else if (command == "test-in-out" || command == "tio") {
+      run("Test (Input from stdin.txt and Output to stdout.txt)", (char*) "cat ./stdin.txt | ./a.out > ./stdout.txt");
+    }
     else if (command == "test-out" || command == "to") {
       run("Test (Output to stdout.txt)", (char*) "./a.out > ./stdout.txt");
     }
