@@ -58,6 +58,9 @@ int main() {
     else if (command == "test" || command == "t") {
       test();
     }
+    else if (command == "test-in" || command == "ti") {
+      run("Test (Input from stdin.txt)", (char*) "cat ./stdin.txt | ./a.out");
+    }
     else {
       message("No Command Found. Try Again.");
     }

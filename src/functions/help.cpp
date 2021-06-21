@@ -30,6 +30,9 @@ void help() {
   cout << "─ test (Alias: t)" << endl;
   cout << "  Run a.out; you can test sample inputs" << endl;
   cout << "  Same as './a.out'" << endl;
+  cout << "─ test-in (Alias: ti)" << endl;
+  cout << "  Run a.out and Load input from stdin.txt" << endl;
+  cout << "  Same as 'cat ./stdin.txt | ./a.out'" << endl;
 
   cout << endl;
 }
