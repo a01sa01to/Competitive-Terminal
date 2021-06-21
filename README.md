@@ -11,7 +11,7 @@ This program is intended to use on WSL or Linux.
 1. Clone this repository.
 2. Modify `settings/template.cpp` as you like.
 3. Open the Terminal.
-4. Run `./comp-prog`.
+4. Run `./competitive-terminal`.
 
 ## License
 

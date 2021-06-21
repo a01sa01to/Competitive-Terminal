@@ -1,2 +1,2 @@
 #! /usr/bin/sh
-g++ src/main.cpp -o comp-prog
+g++ src/main.cpp -o competitive-terminal
