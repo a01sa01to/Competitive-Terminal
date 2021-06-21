@@ -39,23 +39,23 @@ int main() {
   cout << endl;
   while (true) {
     string command = question("Command");
-    if (command == "compile") {
+    if (command == "compile" || command == "c") {
       run("Compile", (char*) "g++ a.cpp -o a.out");
     }
-    else if (command == "exit") {
+    else if (command == "exit" || command == "e") {
       message("Exiting...");
       break;
     }
-    else if (command == "help") {
+    else if (command == "help" || command == "h") {
       help();
     }
-    else if (command == "install") {
+    else if (command == "install" || command == "i") {
       run("Install", (char*) "sudo apt update -y && sudo apt upgrade -y && sudo apt install g++");
     }
-    else if (command == "reset") {
+    else if (command == "reset" || command == "r") {
       run("Reset", (char*) "cat ./settings/template.cpp > a.cpp");
     }
-    else if (command == "test") {
+    else if (command == "test" || command == "t") {
       test();
     }
     else {
