@@ -1,7 +1,7 @@
 #define _GLIBCXX_DEBUG
-#include "functions/command.h"
-#include "functions/message.h"
-#include "functions/question.h"
+#include "functions/command.cpp"
+#include "functions/message.cpp"
+#include "functions/question.cpp"
 
 #include <chrono>
 #include <iomanip>
