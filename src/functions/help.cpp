@@ -20,6 +20,10 @@ void help() {
   cout << "  Exit this terminal" << endl;
   cout << "─ help" << endl;
   cout << "  Show this help" << endl;
+  cout << "─ install" << endl;
+  cout << "  Update and Upgrade packages, then Install g++" << endl;
+  cout << "  Same as 'sudo apt update -y &&" << endl;
+  cout << "    sudo apt upgrade -y && sudo apt install g++'" << endl;
   cout << "─ reset" << endl;
   cout << "  Reset a.cpp according to settings/template.cpp" << endl;
   cout << "  Same as 'cat ./settings/template.cpp > a.cpp'" << endl;

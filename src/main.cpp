@@ -49,6 +49,9 @@ int main() {
     else if (command == "help") {
       help();
     }
+    else if (command == "install") {
+      run("Install", (char*) "sudo apt update -y && sudo apt upgrade -y && sudo apt install g++");
+    }
     else if (command == "reset") {
       run("Reset", (char*) "cat ./settings/template.cpp > a.cpp");
     }
