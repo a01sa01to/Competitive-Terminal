@@ -42,7 +42,7 @@ int main() {
   while (true) {
     string command = question("Command");
     if (command == "compile" || command == "c") {
-      run("Compile", (char*) "g++ a.cpp -o a.out");
+      run("Compile", (char*) "g++ a.cpp -o a.out -std=c++17 -I .");
     }
     else if (command == "exit" || command == "e") {
       message("Exiting...");
