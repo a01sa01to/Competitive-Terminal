@@ -1,4 +1,3 @@
-#define _GLIBCXX_DEBUG
 #include "functions/command.cpp"
 #include "functions/help.cpp"
 #include "functions/message.cpp"
@@ -42,7 +41,7 @@ int main() {
   while (true) {
     string command = question("Command");
     if (command == "compile" || command == "c") {
-      run("Compile", (char*) "g++ a.cpp -o a.out -std=c++17 -I .");
+      run("Compile", (char*) "g++ a.cpp -o a.out -std=c++17 -I . -D_GLIBCXX_DEBUG");
     }
     else if (command == "exit" || command == "e") {
       message("Exiting...");
