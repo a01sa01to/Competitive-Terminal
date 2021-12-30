@@ -28,6 +28,7 @@ This table is sorted in ascending order by command.
 | test-in (ti)      | Run `a.out` with input of `stdin.txt`              | `./a.out < stdin.txt`                                         |
 | test-out (to)     | Run `a.out` and Write output to `stdout.txt`       | `./a.out > stdout.txt`                                        |
 | test-in-out (tio) | Combination of `test-in` and `test-out`            | `./a.out < stdin.txt > stdout.txt`                            |
+| version (v)       | Show the version of this terminal                  | -                                                             |
 
 ## License
 

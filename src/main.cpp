@@ -1,3 +1,4 @@
+#include "Constants.cpp"
 #include "functions/command.cpp"
 #include "functions/help.cpp"
 #include "functions/message.cpp"
@@ -90,6 +91,9 @@ int main() {
       int x = run((char*) "./a.out > stdout.txt");
       border();
       showResult("Test", x);
+    }
+    else if (command == "version" || command == "v") {
+      message("Version: " + CT::version);
     }
     else {
       message("No Command Found. Try Again.");

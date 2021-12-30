@@ -1,9 +1,13 @@
 #pragma once
+
+#include "../Constants.cpp"
+
 #include <iostream>
 using namespace std;
+
 void help() {
   cout << "──────────────────────────────────────────────────" << endl;
-  cout << "         Competitive Programming Terminal         " << endl;
+  cout << "   Competitive Programming Terminal (ver " << CT::version << ")   " << endl;
   cout << "  Copyright © Since 2021 Asa All Rights Reserved. " << endl;
   cout << "──────────────────────────────────────────────────" << endl;
   cout << endl;
@@ -32,5 +36,7 @@ void help() {
   cout << "  Run a.out and Write output to stdout.txt" << endl;
   cout << "─ test-in-out (Alias: tio)" << endl;
   cout << "  Combination of test-in and test-out" << endl;
+  cout << "- version (Alias: v)" << endl;
+  cout << "  Show the version of this terminal" << endl;
   cout << endl;
 }
