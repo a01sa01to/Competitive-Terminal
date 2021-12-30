@@ -13,3 +13,9 @@ int run(char* command) {
     return -1;
   }
 }
+
+void showResult(string name, int x) {
+  if (x == 0) message(name + " Completed!");
+  else
+    message(name + " Failed... (code: " + to_string(x) + ")");
+}

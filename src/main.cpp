@@ -28,9 +28,7 @@ int main() {
       message("Compile Selected.");
       message("Compiling...");
       int x = run((char*) "g++ a.cpp -o a.out -std=c++17 -I . -D_GLIBCXX_DEBUG");
-      if (x == 0) message("Compile Completed!");
-      else
-        message("Compile Failed... (code: " + to_string(x) + ")");
+      showResult("Compile", x);
     }
     else if (command == "exit" || command == "e") {
       message("Exiting...");
@@ -46,30 +44,22 @@ int main() {
       cout << endl;
       int x = run((char*) "sudo apt update -y");
       cout << endl;
-      if (x == 0) message("Update Completed!");
-      else {
-        message("Update Failed... (code: " + to_string(x) + ")");
-        continue;
-      }
+      showResult("Update", x);
+      if (x != 0) continue;
       border();
       message("Installing...");
       cout << endl;
       x = run((char*) "sudo apt install -y g++");
       cout << endl;
-      if (x == 0) message("Install Completed!");
-      else {
-        message("Install Failed... (code: " + to_string(x) + ")");
-        continue;
-      }
+      showResult("Install", x);
+      if (x != 0) continue;
       border();
       message("Finished!");
     }
     else if (command == "reset" || command == "r") {
       message("Reset Selected.");
       int x = run((char*) "cat ./settings/template.cpp > a.cpp");
-      if (x == 0) message("Reset Completed!");
-      else
-        message("Reset Failed... (code: " + to_string(x) + ")");
+      showResult("Reset", x);
     }
     else if (command == "test" || command == "t") {
       message("Test Selected.");
@@ -77,9 +67,7 @@ int main() {
       border();
       int x = run((char*) "./a.out");
       border();
-      if (x == 0) message("Test Completed!");
-      else
-        message("Test Failed... (code: " + to_string(x) + ")");
+      showResult("Test", x);
     }
     else if (command == "test-in" || command == "ti") {
       message("Test (Input from stdin.txt) Selected.");
@@ -87,17 +75,13 @@ int main() {
       border();
       int x = run((char*) "./a.out < stdin.txt");
       border();
-      if (x == 0) message("Test Completed!");
-      else
-        message("Test Failed... (code: " + to_string(x) + ")");
+      showResult("Test", x);
     }
     else if (command == "test-in-out" || command == "tio") {
       message("Test (Input from stdin.txt, Output to stdout.txt) Selected.");
       message("Running...");
       int x = run((char*) "./a.out < stdin.txt > stdout.txt");
-      if (x == 0) message("Test Completed!");
-      else
-        message("Test Failed... (code: " + to_string(x) + ")");
+      showResult("Test", x);
     }
     else if (command == "test-out" || command == "to") {
       message("Test (Output to stdout.txt) Selected.");
@@ -105,9 +89,7 @@ int main() {
       border();
       int x = run((char*) "./a.out > stdout.txt");
       border();
-      if (x == 0) message("Test Completed!");
-      else
-        message("Test Failed... (code: " + to_string(x) + ")");
+      showResult("Test", x);
     }
     else {
       message("No Command Found. Try Again.");
