@@ -4,15 +4,12 @@
 #include <sys/wait.h>
 using namespace std;
 
-void run(string name, char* command) {
-  cout << "! " << name << " Selected." << endl;
+int run(char* command) {
   int ret = system(command);
   if (WIFEXITED(ret)) {
-    cout << "! " << name << " completed with status " << WEXITSTATUS(ret) << endl;
+    return WEXITSTATUS(ret);
   }
   else {
-    cout << "! " << name << " failed with status -1" << endl;
+    return -1;
   }
-  cout << endl;
-  return;
 }

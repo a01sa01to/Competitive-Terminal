@@ -4,5 +4,8 @@ using namespace std;
 
 void message(string msg) {
   cout << "! " << msg << endl;
-  cout << endl;
+}
+
+void border() {
+  cout << "─────────────────────" << endl;
 }
