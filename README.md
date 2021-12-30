@@ -14,7 +14,7 @@ This program is intended to use on WSL or Linux.
 4. Run `./competitive-terminal`.
 
 ## Available Commands (Case-insensitive)
-- compile (Alias: c)<br>Compile a.cpp and Output as a.out<br>Same as `g++ a.cpp -o a.out -std=c++17 -I . -D_GLIBCXX_DEBUG`
+- compile (Alias: c)<br>Compile a.cpp and Output as a.out<br>Same as `g++ a.cpp -o a.out -std=c++17 -I . -D_GLIBCXX_DEBUG -DLOCAL`
 - exit (Alias: e)<br>Exit this terminal
 - help (Alias: h)<br>Show this help
 - install (Alias: i)<br>Update and Upgrade packages, then Install g++<br>Same as `sudo apt update -y && sudo apt install g++`
