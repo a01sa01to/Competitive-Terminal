@@ -25,13 +25,12 @@ void help() {
   cout << "─ reset (Alias: r)" << endl;
   cout << "  Reset a.cpp according to settings/template.cpp" << endl;
   cout << "─ test (Alias: t)" << endl;
-  cout << "  Run a.out; you can test sample inputs" << endl;
+  cout << "  Run a.out for testing sample inputs" << endl;
   cout << "─ test-in (Alias: ti)" << endl;
-  cout << "  Run a.out and Load input from stdin.txt" << endl;
+  cout << "  Run a.out with input of stdin.txt" << endl;
   cout << "─ test-out (Alias: to)" << endl;
   cout << "  Run a.out and Write output to stdout.txt" << endl;
   cout << "─ test-in-out (Alias: tio)" << endl;
-  cout << "  Run a.out, Load input from stdin.txt" << endl;
-  cout << "                     and Write output to stdout.txt" << endl;
+  cout << "  Combination of test-in and test-out" << endl;
   cout << endl;
 }
