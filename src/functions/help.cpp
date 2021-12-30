@@ -15,31 +15,22 @@ void help() {
   cout << "          Commands are Case-insensitive.          " << endl;
   cout << "─ compile (Alias: c)" << endl;
   cout << "  Compile a.cpp and Output as a.out" << endl;
-  cout << "  Same as 'g++ a.cpp -o a.out'" << endl;
   cout << "─ exit (Alias: e)" << endl;
   cout << "  Exit this terminal" << endl;
   cout << "─ help (Alias: h)" << endl;
   cout << "  Show this help" << endl;
   cout << "─ install (Alias: i)" << endl;
-  cout << "  Update and Upgrade packages, then Install g++" << endl;
-  cout << "  Same as 'sudo apt update -y &&" << endl;
-  cout << "    sudo apt upgrade -y && sudo apt install g++'" << endl;
+  cout << "  Update packages, then Install g++" << endl;
   cout << "─ reset (Alias: r)" << endl;
   cout << "  Reset a.cpp according to settings/template.cpp" << endl;
-  cout << "  Same as 'cat ./settings/template.cpp > a.cpp'" << endl;
   cout << "─ test (Alias: t)" << endl;
   cout << "  Run a.out; you can test sample inputs" << endl;
-  cout << "  Same as './a.out'" << endl;
   cout << "─ test-in (Alias: ti)" << endl;
   cout << "  Run a.out and Load input from stdin.txt" << endl;
-  cout << "  Same as 'cat ./stdin.txt | ./a.out'" << endl;
   cout << "─ test-out (Alias: to)" << endl;
   cout << "  Run a.out and Write output to stdout.txt" << endl;
-  cout << "  Same as './a.out > ./stdout.txt'" << endl;
   cout << "─ test-in-out (Alias: tio)" << endl;
   cout << "  Run a.out, Load input from stdin.txt" << endl;
   cout << "                     and Write output to stdout.txt" << endl;
-  cout << "  Same as 'cat ./stdin.txt | ./a.out > ./stdout.txt'" << endl;
-
   cout << endl;
 }
