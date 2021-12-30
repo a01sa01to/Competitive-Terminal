@@ -14,15 +14,20 @@ This program is intended to use on WSL or Linux.
 4. Run `./competitive-terminal`.
 
 ## Available Commands (Case-insensitive)
-- compile (Alias: c)<br>Compile a.cpp and Output as a.out<br>Same as `g++ a.cpp -o a.out -std=c++17 -I . -D_GLIBCXX_DEBUG -DLOCAL`
-- exit (Alias: e)<br>Exit this terminal
-- help (Alias: h)<br>Show this help
-- install (Alias: i)<br>Update and Upgrade packages, then Install g++<br>Same as `sudo apt update -y && sudo apt install g++`
-- reset (Alias: r)<br>Reset a.cpp according to settings/template.cpp<br>Same as `cat ./settings/template.cpp > a.cpp`
-- test (Alias: t)<br>Run a.out; you can test sample inputs<br>Same as `./a.out`
-- test-in (Alias: ti)<br>Run a.out and Load input from stdin.txt<br>Same as `./a.out < stdin.txt`
-- test-out (Alias: to)<br>Run a.out and Write output to stdout.txt<br>Same as `./a.out > stdout.txt`
-- test-in-out (Alias: tio)<br>Run a.out, Load input from stdin.txt and Write output to stdout.txt<br>Same as `./a.out < stdin.txt > stdout.txt`
+
+This table is sorted in ascending order by command.
+
+| Command (Alias)   | Description                                        | Same Bash Command                                             |
+| :---------------- | :------------------------------------------------- | :------------------------------------------------------------ |
+| compile (c)       | Compile `a.cpp` and Output as `a.out`              | `g++ a.cpp -o a.out -std=c++17 -I . -D_GLIBCXX_DEBUG -DLOCAL` |
+| exit (e)          | Exit this terminal                                 | -                                                             |
+| help (h)          | Show help                                          | -                                                             |
+| install (i)       | Update packages, then Install g++                  | `sudo apt update -y && sudo apt install g++`                  |
+| reset (r)         | Reset `a.cpp` according to `settings/template.cpp` | `cat ./settings/template.cpp > a.cpp`                         |
+| test (t)          | Run `a.out` for testing sample inputs              | `./a.out`                                                     |
+| test-in (ti)      | Run `a.out` with input of `stdin.txt`              | `./a.out < stdin.txt`                                         |
+| test-out (to)     | Run `a.out` and Write output to `stdout.txt`       | `./a.out > stdout.txt`                                        |
+| test-in-out (tio) | Combination of `test-in` and `test-out`            | `./a.out < stdin.txt > stdout.txt`                            |
 
 ## License
 
