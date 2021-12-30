@@ -1,3 +1,7 @@
+#pragma once
+
+#include "message.cpp"
+
 #include <iostream>
 #include <string>
 #include <sys/types.h>
