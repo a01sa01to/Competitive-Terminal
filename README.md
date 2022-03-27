@@ -19,7 +19,7 @@ This table is sorted in ascending order by command.
 
 | Command (Alias)   | Description                                        | Same Bash Command                                             |
 | :---------------- | :------------------------------------------------- | :------------------------------------------------------------ |
-| compile (c)       | Compile `a.cpp` and Output as `a.out`              | `g++ a.cpp -o a.out -std=c++17 -I . -D_GLIBCXX_DEBUG -DLOCAL` |
+| compile (c)       | Compile `a.cpp` and Output as `a.out`              | `g++ a.cpp -o a.out -std=c++17 -I . -DLOCAL`                  |
 | exit (e)          | Exit this terminal                                 | -                                                             |
 | help (h)          | Show help                                          | -                                                             |
 | install (i)       | Update packages, then Install g++                  | `sudo apt update -y && sudo apt install g++`                  |

@@ -28,7 +28,7 @@ int main() {
     if (command == "compile" || command == "c") {
       message("Compile Selected.");
       message("Compiling...");
-      int x = run((char*) "g++ a.cpp -o a.out -std=c++17 -I . -D_GLIBCXX_DEBUG -DLOCAL");
+      int x = run((char*) "g++ a.cpp -o a.out -std=c++17 -I . -DLOCAL");
       showResult("Compile", x);
     }
     else if (command == "exit" || command == "e") {
