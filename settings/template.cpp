@@ -2,7 +2,12 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-int main() {
+#ifdef LOCAL
+// #define _GLIBCXX_DEBUG
+#else
+// ...
+#endif
 
+int main() {
   return 0;
 }
