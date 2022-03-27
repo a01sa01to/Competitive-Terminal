@@ -4,5 +4,5 @@
 using namespace std;
 
 namespace CT {
-  const string version = "1.1.1";
+  const string version = "1.1.2";
 }
