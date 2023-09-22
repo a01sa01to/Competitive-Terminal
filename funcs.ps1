@@ -2,7 +2,7 @@ Write-Output ">>> Load functions"
 
 function global:cp-c() {
   Write-Output ">>> Compile a.cpp"
-  g++ -o a.exe -std=c++17 -I . -DLOCAL a.cpp
+  g++ -o a.exe -std=gnu++2b -I . -DLOCAL -O2 -Wall -Wextra -mtune=native -march=native -fconstexpr-depth=2147483647 -fconstexpr-loop-limit=2147483647 -fconstexpr-ops-limit=2147483647 a.cpp
   if ($LASTEXITCODE -ne 0) {
     Write-Output ">>> Compile Error"
     return
