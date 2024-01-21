@@ -24,7 +24,6 @@ BinPackArguments: true
 BinPackParameters: true
 BitFieldColonSpacing: After
 BreakBeforeBinaryOperators: NonAssignment
-BreakBeforeBraces: Custom
 BreakBeforeConceptDeclarations: false
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeColon
