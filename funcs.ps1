@@ -82,8 +82,6 @@ function global:cp-b() {
   }
   (Get-Content bundle.cpp) -replace [regex]::Escape($path), "my-library" | Set-Content bundle.cpp
   Write-Output ">>> Bundle Success"
-  Get-Content bundle.cpp | Set-Clipboard
-  Write-Output ">>> Copied to clipboard"
 }
 
 Write-Output ">>> Loaded function (cp-b)"
