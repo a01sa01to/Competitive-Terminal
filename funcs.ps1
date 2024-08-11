@@ -1,8 +1,8 @@
 Write-Output ">>> Load functions"
 
 function global:cp-c() {
-  Write-Output ">>> Compile a.cpp"
-  g++ -o a.exe -std=gnu++2b -I . -DLOCAL -O2 -Wall -mtune=native -march=native -fconstexpr-depth=2147483647 -fconstexpr-loop-limit=2147483647 -fconstexpr-ops-limit=2147483647 a.cpp
+  Write-Output ">>> Compile"
+  g++ -o a.exe -std=gnu++2b -I . -DLOCAL -D_GLIBCXX_DEBUG -O2 -Wall -mtune=native -march=native -fconstexpr-depth=2147483647 -fconstexpr-loop-limit=2147483647 -fconstexpr-ops-limit=2147483647 main.cpp
   if ($LASTEXITCODE -ne 0) {
     Write-Output ">>> Compile Error"
     return
@@ -10,15 +10,15 @@ function global:cp-c() {
   Write-Output ">>> Compile Success"
 }
 
-Write-Output ">>> Loaded functions (cp-c)"
+Write-Output ">>> Loaded function (cp-c)"
 
 function global:cp-r() {
   Write-Output ">>> Reset"
-  Copy-Item settings/template.cpp a.cpp
+  Copy-Item settings/template.cpp main.cpp
   Write-Output ">>> Reset Success"
 }
 
-Write-Output ">>> Loaded functions (cp-r)"
+Write-Output ">>> Loaded function (cp-r)"
 
 function global:cp-t() {
   Write-Output ">>> Test"
@@ -30,7 +30,7 @@ function global:cp-t() {
   Write-Output ">>> Test Success"
 }
 
-Write-Output ">>> Loaded functions (cp-t)"
+Write-Output ">>> Loaded function (cp-t)"
 
 function global:cp-ti() {
   Write-Output ">>> Test (input)"
@@ -42,7 +42,7 @@ function global:cp-ti() {
   Write-Output ">>> Test Success"
 }
 
-Write-Output ">>> Loaded functions (cp-ti)"
+Write-Output ">>> Loaded function (cp-ti)"
 
 function global:cp-to() {
   Write-Output ">>> Test (output)"
@@ -54,7 +54,7 @@ function global:cp-to() {
   Write-Output ">>> Test Success"
 }
 
-Write-Output ">>> Loaded functions (cp-to)"
+Write-Output ">>> Loaded function (cp-to)"
 
 function global:cp-tio() {
   Write-Output ">>> Test (input, output)"
@@ -66,5 +66,20 @@ function global:cp-tio() {
   Write-Output ">>> Test Success"
 }
 
-Write-Output ">>> Loaded functions (cp-tio)"
+Write-Output ">>> Loaded function (cp-tio)"
+
+function global:cp-b() {
+  Write-Output ">>> Bundle"
+  oj-bundle -I /path/to/library-root main.cpp > bundle.cpp
+  if ($LASTEXITCODE -ne 0) {
+    Write-Output ">>> Bundle Error"
+    return
+  }
+  Write-Output ">>> Bundle Success"
+  Get-Content bundle.cpp | Set-Clipboard
+  Write-Output ">>> Copied to clipboard"
+}
+
+Write-Output ">>> Loaded function (cp-b)"
+
 Write-Output ">>> All done!"
