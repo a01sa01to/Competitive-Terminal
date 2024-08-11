@@ -74,11 +74,13 @@ Write-Output ">>> Loaded function (cp-tio)"
 
 function global:cp-b() {
   Write-Output ">>> Bundle"
-  oj-bundle -I /path/to/library-root main.cpp > bundle.cpp
+  $path = "/path/to/library"
+  oj-bundle -I $path main.cpp > bundle.cpp
   if ($LASTEXITCODE -ne 0) {
     Write-Output ">>> Bundle Error"
     return
   }
+  (Get-Content bundle.cpp) -replace [regex]::Escape($path), "my-library" | Set-Content bundle.cpp
   Write-Output ">>> Bundle Success"
   Get-Content bundle.cpp | Set-Clipboard
   Write-Output ">>> Copied to clipboard"
