@@ -80,7 +80,13 @@ function global:cp-b() {
     Write-Output ">>> Bundle Error"
     return
   }
-  (Get-Content bundle.cpp) -replace [regex]::Escape($path), "my-library" | Set-Content bundle.cpp
+  while ($true) {
+    try {
+      (Get-Content bundle.cpp) -replace [regex]::Escape($path), "my-library" | Set-Content bundle.cpp
+      break
+    }
+    catch {}
+  }
   Write-Output ">>> Bundle Success"
 }
 
