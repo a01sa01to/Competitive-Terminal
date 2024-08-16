@@ -94,6 +94,9 @@ Write-Output ">>> Loaded function (cp-b)"
 
 function global:cp-bc() {
   cp-b
+  if ($LASTEXITCODE -ne 0) {
+    return
+  }
   __cp-compile "bundle.cpp"
 }
 
