@@ -82,7 +82,16 @@ function global:cp-b() {
   }
   while ($true) {
     try {
+      # パスを置換
       (Get-Content bundle.cpp) -replace [regex]::Escape($path), "my-library" | Set-Content bundle.cpp
+      # コメント削除
+      (Get-Content bundle.cpp) -replace "// .*$" | Set-Content bundle.cpp
+      # 空白のみの行を削除
+      (Get-Content bundle.cpp) -replace "^\s*$" | Set-Content bundle.cpp
+      # 行末スペース削除
+      (Get-Content bundle.cpp) -replace "\s+$" | Set-Content bundle.cpp
+      # 空白行削除
+      (Get-Content bundle.cpp) | Out-String -Stream | Where-Object { $_ -ne "" } | Set-Content bundle.cpp
       break
     }
     catch {}
