@@ -2,7 +2,17 @@ Write-Output ">>> Load functions"
 
 function global:__cp-compile($file) {
   Write-Output ">>> Compile $file"
-  g++ -o a.exe -std=gnu++2b -I . -DLOCAL -D_GLIBCXX_DEBUG -O2 -Wall -mtune=native -march=native -fconstexpr-depth=2147483647 -fconstexpr-loop-limit=2147483647 -fconstexpr-ops-limit=2147483647 $file
+  g++ -o a.exe -std=gnu++2b -I . -DLOCAL -D_GLIBCXX_DEBUG -O2 -Wall -mtune=native -march=native -fconstexpr-depth=2147483647 -fconstexpr-loop-limit=2147483647 -fconstexpr-ops-limit=2147483647 "-Wl,--stack,2147483647" $file
+  if ($LASTEXITCODE -ne 0) {
+    Write-Output ">>> Compile Error"
+    return
+  }
+  Write-Output ">>> Compile Success"
+}
+
+function global:__cp-compile-wodebug($file) {
+  Write-Output ">>> Compile $file (without Debug)"
+  g++ -o a.exe -std=gnu++2b -I . -O2 -Wall -mtune=native -march=native -fconstexpr-depth=2147483647 -fconstexpr-loop-limit=2147483647 -fconstexpr-ops-limit=2147483647 "-Wl,--stack,2147483647" $file
   if ($LASTEXITCODE -ne 0) {
     Write-Output ">>> Compile Error"
     return
@@ -15,6 +25,12 @@ function global:cp-c() {
 }
 
 Write-Output ">>> Loaded function (cp-c)"
+
+function global:cp-cf() {
+  __cp-compile-wodebug "main.cpp"
+}
+
+Write-Output ">>> Loaded function (cp-cf)"
 
 function global:cp-r() {
   Write-Output ">>> Reset"
@@ -110,5 +126,16 @@ function global:cp-bc() {
 }
 
 Write-Output ">>> Loaded function (cp-bc)"
+
+
+function global:cp-bcf() {
+  cp-b
+  if ($LASTEXITCODE -ne 0) {
+    return
+  }
+  __cp-compile-wodebug "bundle.cpp"
+}
+
+Write-Output ">>> Loaded function (cp-bcf)"
 
 Write-Output ">>> All done!"
